@@ -5,6 +5,7 @@ const process = require("process");
 
 function download(host, port, done) {
   const client = net.createConnection({
+    family: 4,
     noDelay: true,
     port: port,
     host: host,
@@ -15,6 +16,7 @@ function download(host, port, done) {
 function upload(host, port, done) {
   const buffer = crypto.randomBytes(100 * 1024 * 1024);
   const client = net.createConnection({
+    family: 4,
     noDelay: true,
     port: port,
     host: host,
